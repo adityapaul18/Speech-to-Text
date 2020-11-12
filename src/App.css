@@ -1,38 +1,87 @@
-.App {
+
+.app_name{
+  text-shadow: 0 0 3px #2f00ff;
+  text-align: center;
+  font-weight: 1000;
+  font-size:35px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: rgb(0, 78, 114);
+  border-bottom: 3px solid black;
+}
+
+.App{
+  background-color: rgb(36, 36, 36);
+  /* display: flex; */
+  height: 100%;
+}
+
+.voice_box{
+  text-shadow: 0 0 3px #ffffff;
+  flex: .5;
+  border-radius: 20px;
+  text-align: center;
+  height: 80vh;
+  background-color: rgb(128, 128, 128);
+  margin: 30px;
+  border: 1px solid;
+  padding-left: 10px;
+  box-shadow: 5px 10px;
+}
+
+.vb_inner
+{
+
+  align-items: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.notes_box{
+  text-shadow: 0 0 3px #ffffff;
+  flex: .5;
+  text-align: center;
+  border-radius: 20px;
+  height: 80vh;
+  background-color:rgb(128, 128, 128);
+  margin: 30px;
+  border: 1px solid;
+  padding-left: 10px;
+  margin-bottom: 0;
+  padding-bottom: 30px;
+  box-shadow: 5px 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.bellow{
+  height: 30px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+.voice_box  > .MuiSvgIcon-root{
+  height: 2em;
+  width: 2em;
+  color: #ffffff;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background: rgb(77, 77, 77);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.notes{
+
+  color:white;
+  font-weight: 900;
+  text-shadow: 0 0 0px #ffffff;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.saved_notes{
+    color: white;
+    text-shadow: 0 0 0px #ffffff;
+    height: 70vh;
+    overflow: scroll;
+
 }
