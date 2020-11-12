@@ -1,5 +1,7 @@
 import React ,{useState , useEffect} from 'react';
 import './App.css';
+import MicIcon from '@material-ui/icons/Mic';
+import MicOffIcon from '@material-ui/icons/MicOff';
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
 const mic = new SpeechRecognition()
@@ -31,11 +33,11 @@ function App() {
     else{
       mic.stop()
       mic.onend = () => {
-        console.log('mic stop')
+        console.log('recording stopped')
       }
     }
     mic.onstart = () => {
-      console.log('mic on')
+      console.log('recording started')
     }
 
     mic.onresult = event => {
@@ -56,23 +58,28 @@ function App() {
 
   return (
     <>
-    <h1>Voice Notes</h1>
 
     <div className="App">
-      <div className="box">
-         <h2>current box</h2>
-         {isListening ? <span>mic on</span> : <span> mic off</span>}
-         <button onClick={handleSaveNote} disabled ={!note}>Save Note </button>
-         <button onClick={() => setisListening(prevState => !prevState)}>Start/Stop</button>
-      <p>{note}</p>
+    <div className="app_name">Voice Notes</div>
+      <div className="voice_box">
+         <h2>Recording Section</h2>
+               {isListening ? <MicIcon/> : <MicOffIcon/>}
+         <div className="vb_inner">
+               <button onClick={handleSaveNote} disabled ={!note}>Print </button>
+               <button onClick={() => setisListening(prevState => !prevState)}>Record</button>
+         </div>
+      <p className="notes">{note}</p>
       </div>
-      <div className="box">
+      <div className="notes_box">
          <h2>Notes Obtained</h2>
+         <div className="saved_notes">
          {savednotes.map(n => (
            <p key={n}>{n}</p>
-         ))}
+           ))}
+         </div>
       </div>
-    </div>
+      <div className="bellow"></div>
+      </div>
     </>
   );
 }
